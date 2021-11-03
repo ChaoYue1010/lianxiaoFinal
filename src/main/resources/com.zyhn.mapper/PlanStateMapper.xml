@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyhn.mapper.PlanStateMapper">
+
+    <resultMap id="planStateMap" type="com.zyhn.entity.PlanState">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="code" property="code" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="VARCHAR"/>
+        <result column="actualQuantity" property="actualQuantity" jdbcType="VARCHAR"/>
+        <result column="cancelReason" property="cancelReason" jdbcType="VARCHAR"/>
+        <result column="recordTime" property="recordTime" jdbcType="VARCHAR"/>
+        <result column="create_at" property="createAt" jdbcType="TIME"/>
+        <result column="update_at" property="updateAt" jdbcType="TIME"/>
+    </resultMap>
+
+    <!-- 通用查询结果列-->
+    <sql id="Base_Column">
+        id,
+        `type`,
+        code,
+        status,
+        actualQuantity,
+        cancelReason,
+        recordTime,
+        createAt,
+        updateAt
+	</sql>
+
+
+    <!-- 添加 -->
+    <insert id="insertPlanState" parameterType="com.zyhn.entity.PlanState">
+		 INSERT INTO planstate
+			 (
+            `type`,
+            code,
+            status,
+            actualQuantity,
+            cancelReason,
+            recordTime,
+            createAt,
+            updateAt
+			 )
+		 VALUES
+ 			 (
+			 #{type},
+			 #{code},
+			 #{status},
+			 #{actualQuantity},
+			 #{cancelReason},
+			 #{recordTime},
+			 #{createAt},
+			 #{updateAt}
+			 )
+	</insert>
+
+    <!--查询：根据主键ID查询-->
+    <select id="selectById" resultMap="planStateMap" parameterType="com.zyhn.entity.PlanState">
+        SELECT
+        <include refid="Base_Column"/>
+        FROM planstate
+        WHERE id = #{id}
+    </select>
+
+    <!-- 修改-->
+    <update id="updatePlanState" parameterType="com.zyhn.entity.PlanState">
+        UPDATE
+        planstate
+        <set>
+            <if test="id != null">id = #{id},</if>
+            <if test="type != null">`type` = #{type},</if>
+            <if test="code != null">code = #{code},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="actualQuantity != null">actualQuantity = #{actualQuantity},</if>
+            <if test="cancelReason != null">cancelReason = #{cancelReason},</if>
+            <if test="recordTime != null">recordTime = #{recordTime},</if>
+            <if test="createAt != null">create_at = #{createAt},</if>
+            <if test="updateAt != null">update_at = #{updateAt},</if>
+        </set>
+        WHERE
+        code = #{code}
+    </update>
+
+
+</mapper>
