@@ -2,7 +2,6 @@ package com.zyhn.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zyhn.entity.Waybill;
-import com.zyhn.entity.Waybill2;
 import com.zyhn.mapper.WaybillMapper;
 import com.zyhn.service.IWaybillService;
 import lombok.extern.slf4j.Slf4j;
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @author chaoyue
