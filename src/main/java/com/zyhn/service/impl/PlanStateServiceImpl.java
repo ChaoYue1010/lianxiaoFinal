@@ -16,7 +16,7 @@ import java.util.List;
  * @date 2021/9/16 下午4:52
  */
 @Service
-@Slf4j(topic = "PlanStateServiceImpl——————————")
+@Slf4j
 public class PlanStateServiceImpl implements IPlanStateService {
 
 	@Resource

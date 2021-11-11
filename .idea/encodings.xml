@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/../data_exchanger/trunk/exchanger-lishui/src/main/resources/application.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../data_exchanger/trunk/flat/exchanger-flat-lishui/src/main/resources/application.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../zhenhai/server/trunk/iip-flat/src/main/resources/application.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../zhenhai/server/trunk/iip-knowledgebase-plugin/src/test/java/resources/ebean.properties" charset="UTF-8" />
   </component>
 </project>

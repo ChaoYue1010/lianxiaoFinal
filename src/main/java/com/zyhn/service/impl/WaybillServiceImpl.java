@@ -14,7 +14,7 @@ import java.util.Date;
  * @author chaoyue
  */
 @Service
-@Slf4j(topic = "WaybillServiceImpl——————————")
+@Slf4j
 public class WaybillServiceImpl implements IWaybillService {
 
 	@Resource
